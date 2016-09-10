@@ -1,1 +1,23 @@
 /* Empty. Add your own CSS if you like */
+@font-face {
+
+font-family: "Simpsonfont";
+
+src: url("Simpsonfont.ttf") format("truetype");
+
+}
+.lala
+{
+	background: yellow
+}
+.titulohome
+{
+	font-family: "Simpsonfont";
+}
+.imghome {
+	
+ 	position: relative;
+  	height: 50%;
+ 	width: 40%;
+ 	left: 30%;
+}

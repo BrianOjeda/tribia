@@ -1,6 +1,18 @@
-<ion-view view-title="Home">
+<ion-view view-title="">
   <ion-content>
-  		<h1><center>Bienvenido a mi tribial</center></h1>
-  		<h4><center>No olvide loguearse antes de empezar a contestar las preguntas</center></h4>
-  </ion-content>
+  <div class="item item-image lala">
+  	<div class="imghome"><img src="img/home.jpg"></div>
+	  
+	
+    <h1 class="titulohome"><center>Cuanto sabe de los simpson?</center></h1>
+  		<h4 ><center>Ingrese su nombre y demuestre cuanto sabe del programa mas popular del mundo</h4></center>
+  </div>
+  		<ion-list>
+          <ion-item menu-close ng-click="login()">
+            Login
+          </ion-item>
+          <ion-item menu-close ng-click="jugar()">
+            Jugar
+          </ion-item>
+        </ion-list>
 </ion-view>
