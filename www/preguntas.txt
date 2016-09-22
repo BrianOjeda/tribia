@@ -1,0 +1,19 @@
+¿Como se llama el medio hermano de Homero?
+1-Armando Barreda
+2-Herb Powell
+3-Abraham Simpson
+acertada=2
+
+¿Como se llama el hijo del señor Burns?
+1-Charles Montgomery Burns
+2-Waylon Burns
+3-Larry Burns
+
+acertada=3
+¿Quien es el padre de Milhouse?
+
+1-Kirk Van Houten
+2-Mussolini Van Houten
+3-Gyro Van Houten
+
+acertada=1

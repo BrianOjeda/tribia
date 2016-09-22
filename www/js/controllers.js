@@ -1,53 +1,48 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('DashCtrl', function($scope) {})
 
+.controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
   // listen for the $ionicView.enter event:
+  //
   //$scope.$on('$ionicView.enter', function(e) {
   //});
-
-  // Form data for the login modal
-  $scope.loginData = {};
-
-  // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/login.html', {
-    scope: $scope
-  }).then(function(modal) {
-    $scope.modal = modal;
+  var preguntasResp = new Firebase('https://miproyecto-739b3.firebaseio.com/tribia/');
+  //$scope.chats = Chats.all();
+  //$scope.remove = function(chat) {
+   // Chats.remove(chat);
+  //};
+  $scope.tribia=[];
+  //$scope.respuestas=[];
+  var contador=0;
+  preguntasResp.on('child_added', function (snapshot) {
+   contador=contador+1;
+    var objs = snapshot.val();
+    unapregunta=new Object();
+    unapregunta.pregunta=objs.pregunta;
+    unapregunta.respuesta1=objs.respuesta1;
+    unapregunta.respuesta2=objs.respuesta2;
+    unapregunta.respuesta3=objs.respuesta3;
+     unapregunta.acertada=objs.acertada;
+    unapregunta.nombre="pregunta"+contador;
+    //$("#tribia").html("<h2>"+objs.pregunta+"</h2>");
+   // $scope.preguntas.push(objs.pregunta);
+    $scope.tribia.push(unapregunta);
   });
 
-  $scope.jugar=function()
-  {
-    location.href="#/app/jugar";
-  };
-  // Triggered in the login modal to close it
-  $scope.closeLogin = function() {
-    $scope.modal.hide();
-  };
-
-  // Open the login modal
-  $scope.login = function() {
-    $scope.modal.show();
-  };
-
-  // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
-
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
-  };
+ 
+   //console.log($scope.preguntas.pregunta);
 })
 
-.controller('HomeCtrl', function($scope) {
-  
+.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
+  $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('AccountCtrl', function($scope) {
+  $scope.settings = {
+    enableFriends: true
+  };
 });
