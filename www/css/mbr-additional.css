@@ -9,9 +9,45 @@ font-family: "Simpsonfont";
 src: url("Simpsonfont.ttf") format("truetype");
 
 }
+input[type=radio]:checked ~ .check {
+  border: 5px solid #0DFF92;
+}
+
+input[type=radio]:checked ~ .check::before{
+  background: #0DFF92;
+}
+
+input[type=radio]:checked ~ label{
+  color: #0DFF92;
+}
+/* style label */
+
+/* radio focus */
 .letrasimp
 {
   font-family: "Simpsonfont";
+}
+.preguntas
+{
+      font-size: 20px;
+    color: #454545;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 20px;
+    margin: 0 0 20px;
+    left: 40px;
+    font-weight: 500;
+}
+.respuestas
+{
+  font-size: 20px;
+    color: #454545;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 20px;
+    margin: 0 0 20px;
+    font-weight: 500;
+    left: 40px;
 }
 .form-login {
     background-color: #660420;

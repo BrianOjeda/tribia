@@ -1,13 +1,15 @@
 <ion-view view-title="Juego">
   <ion-content>
-    <h1 class="animated bounceInLeft">responda las preguntas</h1>
+    <h1 class="animated bounceInLeft letrasimp"><center><strong>"{{user}}"  </strong>Responda las preguntas</center></h1>
     <ion-list>
        <ul>
           <li ng-repeat="x in tribia">
-            <h2 class="animated pulse">{{x.pregunta}}</h2>
-            <h3>{{x.respuesta1}}<input type="radio" name="{{x.nombre}}"value="1"></h3>
-            <h3>{{x.respuesta2}}<input type="radio" name="{{x.nombre}}"value="2"></h3>
-            <h3>{{x.respuesta3}}<input type="radio" name="{{x.nombre}}"value="3"></h3>
+            <h2 class="animated pulse letrasimp preguntas" >{{x.pregunta}}</h2>
+            <div class"">
+                <h3 class="letrasimp respuestas">{{x.respuesta1}}<input type="radio" name="{{x.nombre}}"value="1"></h3>
+                <h3 class="letrasimp respuestas">{{x.respuesta2}}<input type="radio" name="{{x.nombre}}"value="2"></h3>
+                <h3 class="letrasimp respuestas">{{x.respuesta3}}<input type="radio" name="{{x.nombre}}"value="3"></h3>
+            </div>
           </li>
       </ul>
     </ion-list>
